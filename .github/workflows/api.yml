@@ -20,7 +20,7 @@ jobs:
           service_account_key: ${{ secrets.GCLOUD_AUTH }}
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/talks-api:$(git rev-parse --short HEAD) --target prod
+        run: docker build . --file Dockerfile --tag us.gcr.io/${{ secrets.GCLOUD_PROJECT }}/talks-api:$(git rev-parse --short HEAD)
 
       - name: Configure Docker to use Google Cloud Platform
         run: "gcloud auth configure-docker --quiet"
