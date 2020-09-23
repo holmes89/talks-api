@@ -6,5 +6,5 @@ COPY src src
 COPY pyproject.toml poetry.lock ./
 RUN pip install "poetry==1.0.10" && \
     poetry config virtualenvs.create false && \
-    poetry install --no-dev
+    POETRY_VIRTUALENVS_CREATE=false poetry install --no-dev
 CMD [ "poetry", "run", "python", "src/talks_api/main.py", "--port=8080" ]
