@@ -10,4 +10,4 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*  && \
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python && \
     poetry install
-CMD [ "poetry", "run", "python", "src/talks_api/main.py" ]
+CMD [ "poetry", "run", "python", "src/talks_api/main.py", "--port=8080" ]
